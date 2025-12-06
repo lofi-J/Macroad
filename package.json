@@ -18,6 +18,10 @@
     "vite": "^7.0.4"
   },
   "dependencies": {
-    "macroad": "link:"
+    "@tailwindcss/vite": "^4.1.17",
+    "macroad": "link:",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "tailwindcss": "^4.1.17"
   }
 }
