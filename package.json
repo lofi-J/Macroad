@@ -10,6 +10,8 @@
     "tauri:build": "tauri build"
   },
   "devDependencies": {
+    "@tanstack/router-devtools": "^1.140.0",
+    "@tanstack/router-vite-plugin": "^1.140.0",
     "@tauri-apps/cli": "^2",
     "@types/node": "^24.10.1",
     "@types/react": "^19.1.8",
