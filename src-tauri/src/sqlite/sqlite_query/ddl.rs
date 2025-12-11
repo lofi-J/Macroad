@@ -1,3 +1,13 @@
+// FIXME Remove Test Tables
+pub const SOME_COUNT_DDL: &str = "
+CREATE TABLE some_count (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    count INTEGER NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+";
+
 //  folders definition
 pub const FOLDERS_DDL: &str = "
 CREATE TABLE folders (

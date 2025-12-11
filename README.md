@@ -8,4 +8,4 @@ This template should help get you started developing with Tauri, React and Types
 
 ## SQLite db file path
 
-`cd /Users/jera/library/Application Support/com.jera.macroad`
+open -a "DBeaver" ~/Library/Application\ Support/com.jera.macroad/macroad.db

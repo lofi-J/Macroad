@@ -1,6 +1,6 @@
 use tauri_plugin_sql::{Migration, MigrationKind};
 
-use crate::sqlite::sqlite_query::ddl::{FOLDERS_DDL, MACROS_DDL};
+use crate::sqlite::sqlite_query::ddl::{FOLDERS_DDL, MACROS_DDL, SOME_COUNT_DDL};
 
 /**
  * 마이그레이션 함수
@@ -19,6 +19,12 @@ pub fn migrations() -> Vec<Migration> {
             version: 2,
             description: "create_macros_table",
             sql: MACROS_DDL,
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 3,
+            description: "create_some_count_table",
+            sql: SOME_COUNT_DDL,
             kind: MigrationKind::Up,
         },
     ]
