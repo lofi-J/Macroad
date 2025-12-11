@@ -1,18 +1,18 @@
+import { Topbar } from "@/components/topbar";
+import ThemeProvider from "@/context/theme-provider";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 export const Route = createRootRoute({
-  component: RootComponent,
+  component: RootLayout,
 });
 
-function RootComponent() {
+function RootLayout() {
   return (
-    <>
-      <Outlet />
-      {/* 개발 모드에서만 DevTools 표시 */}
-      {import.meta.env.DEV && (
-        <TanStackRouterDevtools position="bottom-right" />
-      )}
-    </>
+    <ThemeProvider>
+      <main className="w-screen h-screen">
+        <Topbar />
+        <Outlet />
+      </main>
+    </ThemeProvider>
   );
 }
