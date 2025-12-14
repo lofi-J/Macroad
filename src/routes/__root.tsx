@@ -1,4 +1,7 @@
+import { Sidebar } from '@/components/sidebar';
 import { Topbar } from '@/components/topbar';
+import LayoutProvider from '@/context/layout-provider';
+import { MainContainer } from '@/context/main-container';
 import ThemeProvider from '@/context/theme-provider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
@@ -13,10 +16,13 @@ function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <main className="h-screen w-screen">
+        <LayoutProvider>
           <Topbar />
-          <Outlet />
-        </main>
+          <Sidebar />
+          <MainContainer>
+            <Outlet />
+          </MainContainer>
+        </LayoutProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

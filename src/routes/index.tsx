@@ -5,9 +5,5 @@ export const Route = createFileRoute('/')({
 });
 
 function HomePage() {
-  return (
-    <main>
-      <h1>Welcome to macroad</h1>
-    </main>
-  );
+  return <h1 className="bg-blue-500">Welcome to macroad</h1>;
 }
