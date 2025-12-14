@@ -1,9 +1,36 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+/* Nanum Gothic 폰트 정의 */
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('@/assets/font/nanum-gothic/NanumGothic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('@/assets/font/nanum-gothic/NanumGothic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  src: url('@/assets/font/nanum-gothic/NanumGothic-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* Nanum Gothic 폰트 */
+  --font-nanum: 'Nanum Gothic', sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -117,6 +144,6 @@
     @apply select-none;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-nanum;
   }
 }
