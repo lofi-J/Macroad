@@ -1,5 +1,5 @@
 import { CSSProperties, PropsWithChildren } from 'react';
-import { useLayout } from './layout-provider';
+import { useLayout } from '../context/layout-provider';
 
 export const MainContainer = ({ children }: PropsWithChildren) => {
   const { sidebarWidth, topbarHeight } = useLayout();

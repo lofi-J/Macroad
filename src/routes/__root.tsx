@@ -1,7 +1,7 @@
+import { MainContainer } from '@/components/main-container';
 import { Sidebar } from '@/components/sidebar';
 import { Topbar } from '@/components/topbar';
 import LayoutProvider from '@/context/layout-provider';
-import { MainContainer } from '@/context/main-container';
 import ThemeProvider from '@/context/theme-provider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Outlet, createRootRoute } from '@tanstack/react-router';
