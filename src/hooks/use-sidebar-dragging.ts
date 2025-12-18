@@ -16,20 +16,17 @@ export const useSidebarDragging = ({ sidebarRef, setSidebarWidth }: UseSidebarDr
     if (!sidebarRef.current) return;
 
     const handleMouseDown = () => {
-      document.body.setAttribute('data-dragging', 'true');
+      document.body.style.cursor = 'col-resize';
       setIsDragging(true);
     };
 
     const handleMouseUp = () => {
-      document.body.removeAttribute('data-dragging');
+      document.body.style.cursor = 'default';
       setIsDragging(false);
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
-
-      console.log('move');
-      document.body.style.cursor = 'col-resize';
 
       setWidth(clampNumber(e.clientX, MIN_SIDEBAR_WIDTH, MAX_SIDEBAR_WIDTH));
     };

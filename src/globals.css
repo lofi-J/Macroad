@@ -131,9 +131,3 @@
     @apply bg-background text-foreground font-nanum;
   }
 }
-
-/* Dragging */
-body[data-dragging],
-body[data-dragging] * {
-  cursor: col-resize !important;
-}
