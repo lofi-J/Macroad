@@ -16,19 +16,22 @@ export const useSidebarDragging = ({ sidebarRef, setSidebarWidth }: UseSidebarDr
     if (!sidebarRef.current) return;
 
     const handleMouseDown = () => {
+      document.body.setAttribute('data-dragging', 'true');
       setIsDragging(true);
     };
 
     const handleMouseUp = () => {
+      document.body.removeAttribute('data-dragging');
       setIsDragging(false);
     };
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
 
-      const newWidth = e.clientX; // view port X position
+      console.log('move');
+      document.body.style.cursor = 'col-resize';
 
-      setWidth(clampNumber(newWidth, MIN_SIDEBAR_WIDTH, MAX_SIDEBAR_WIDTH));
+      setWidth(clampNumber(e.clientX, MIN_SIDEBAR_WIDTH, MAX_SIDEBAR_WIDTH));
     };
 
     sidebarRef.current.addEventListener('mousedown', handleMouseDown);
@@ -47,7 +50,7 @@ export const useSidebarDragging = ({ sidebarRef, setSidebarWidth }: UseSidebarDr
     const restoreWidth = () => {
       setSidebarWidth(DEFAULT_SIDEBAR_WIDTH);
     };
-    
+
     if (sidebarRef.current) {
       sidebarRef.current.addEventListener('dblclick', restoreWidth);
     }
